@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <title>Visualization w/ D3</title>
+</head>
+<body>
+    <div class="container"> 
+        <h2> D3 Graphics </h2>
+
+        <section id="chart" >
+            <div class="item"> Mark Willis 1 </div>
+            <div class="item"> Red John 2 </div>
+            <div class="item"> Betty Blue 3 </div>
+            <div class="item"> Dirt Diver 4 </div>
+            <div class="item"> Black Shiva 5 </div>
+        </section>
+
+    </div>
+
+
+
+    <script src="./js/d3.min.js"> </script>
+    <script src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
+    <script src="./js/main.js"> </script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyBtHMo4iaDaCYnaD3_CiQqKNouRKojDHHY",
+        authDomain: "dataviz-4cfc2.firebaseapp.com",
+        databaseURL: "https://dataviz-4cfc2.firebaseio.com",
+        storageBucket: "dataviz-4cfc2.appspot.com",
+        messagingSenderId: "769734012378"
+      };
+      firebase.initializeApp(config);
+    </script>
+    <!-- <script> 
+
+        (function (){
+           var data = firebase.database().ref().child('slam');
+           var element = document.getElementById('test');
+           element.innerHTML = data; 
+        })();
+                
+
+    </script> -->
+</body>
+</html>
