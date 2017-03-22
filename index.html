@@ -1,33 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="./styles/styles.css">
-    <title>Visualization w/ D3.js</title>
-</head>
-<body>
-    <div class="container"> 
-        <h2> Data Visualiztions </h2>
 
-        <section id="chart" ></section>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="./styles/styles.css">
+        <title>Visualization w/ D3.js</title>
+    </head>
 
-    </div>
+            <body>
+
+                <div class="container"> 
+
+                    <h2> Data Visualiztions </h2>
+                    <section id="chart" > </section>
+
+                </div>
 
 
 
-    <script src="./js/d3.min.js"> </script>
-    <script src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
-    <script src="./js/main.js"> </script>
-    <script>
-      // Initialize Firebase
-      var config = {
-        apiKey: "AIzaSyBtHMo4iaDaCYnaD3_CiQqKNouRKojDHHY",
-        authDomain: "dataviz-4cfc2.firebaseapp.com",
-        databaseURL: "https://dataviz-4cfc2.firebaseio.com",
-        storageBucket: "dataviz-4cfc2.appspot.com",
-        messagingSenderId: "769734012378"
-      };
-      firebase.initializeApp(config);
-    </script>
-</body>
+            <script src="./js/d3.min.js"> </script>
+            <script src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
+            <script src="./js/main.js"> </script>
+            <script>
+                  // Initialize Firebase
+                  var config = {
+                    apiKey: "AIzaSyBtHMo4iaDaCYnaD3_CiQqKNouRKojDHHY",
+                    authDomain: "dataviz-4cfc2.firebaseapp.com",
+                    databaseURL: "https://dataviz-4cfc2.firebaseio.com",
+                    storageBucket: "dataviz-4cfc2.appspot.com",
+                    messagingSenderId: "769734012378"
+                  };
+                  firebase.initializeApp(config);
+            </script>
+
+    </body>
+
 </html>

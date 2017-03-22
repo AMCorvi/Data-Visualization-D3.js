@@ -42,8 +42,9 @@ body
   font-weight: 300
   font-size: 1.2em
   line-height: 1.2em
-  background: #FDF6E3
-  color: #475B62
+  background: #B22222
+  color: #FFCB03
+  display: flex
 
 strong
   font-weight: 600
@@ -51,7 +52,7 @@ strong
 h1, h2, h3, h4, h5, h6
   font-family: 'Roboto Slab', "Helvetica Neue", Helvetica, sans-serif
   font-weight: 700
-  color: #CB4B19
+  color: #FFCB03
   font-size: 1.75em
   margin-bottom: .4em
 
@@ -59,29 +60,17 @@ p
   margin-bottom: .5em
 
 .container
-  width: 80%
+  display: flex
+  align-content: space-around
+  flex-direction: column
   max-width: 1200px
   margin: 0 auto
   margin-top: 10px
 
-@media all and (max-width: 500px)
-  h2
-    padding-left: 10px
-    text-align: center
-  .container
-    width: 100%
-
-#graphic
-  margin: 0 auto
-
-.highlight
-  color: $lime4
-  font-weight: 600
-
-.item 
-  padding-left: 14px
-  margin: 5px 
-
-.bigger
-  font-size: 24px
+#chart
+  display: flex
+  
+svg 
+  width: 100%
+  justify-content: center
 
