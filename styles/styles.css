@@ -94,6 +94,5 @@ p {
 #chart {
   display: flex; }
 
-svg {
-  width: 100%;
-  justify-content: center; }
+rect {
+  box-shadow: inset 0px -10px 40px 10px black; }

@@ -52,7 +52,6 @@ let tooltip = d3.select('body').append('div')
 
 
 
-
 let barChart = d3.select('#chart').append('svg')
     .attr('width', width)
     .attr('height', height)
@@ -74,6 +73,7 @@ let barChart = d3.select('#chart').append('svg')
             .style('opacity', .9)
 
         tooltip.html(data)
+            .style('color', 'firebrick')
             .style('left', (d3.event.pageX - 35) + 'px')
             .style('top',  (d3.event.pageY - 30) + 'px')
 
@@ -81,6 +81,9 @@ let barChart = d3.select('#chart').append('svg')
             .style('opacity', '.3') 
     })
     .on('mouseout', function(data){
+
+        tooltip.html(null)
+
         d3.select(this)
             .style('opacity', '1') 
     })
@@ -100,9 +103,6 @@ barChart.transition()
     .ease('elastic')
 
 
-toolTip = d3.select('body')
-                .style('position', 'absolute')
-                .style('padding', kk)
 
 
 // Pie Chart
@@ -111,15 +111,19 @@ let pieChartData = [
     {
         label: "Bell",
         value: 33
-    }
+    },
     {
         label: "Biv",
         value: 33
-    }
+    },
     {
-        label: "Devoe".
+        label: "Devoe",
         value: 33
-    }
+    },
 ]
+
+
+
+
 
 
