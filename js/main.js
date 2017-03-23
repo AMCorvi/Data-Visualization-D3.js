@@ -46,10 +46,12 @@ let pieChartData = [
 
 
 // Data display specifications
+//
 let height = 400,
     width = 400,
     barWidth = 50,
-    barOffset = 5;
+    barOffset = 5,
+    nodeWidth = 5,
     radius = 200;
 
 // Linear scale allow data not to exceed maximum 
@@ -125,7 +127,7 @@ barChart.transition()
             return  height - yScale(data);
         })
     .delay((data, index)=>{
-        return data/2 * 20 ;
+        return index * 20 ;
     })
     .duration(800)
     .ease('elastic')
@@ -168,3 +170,69 @@ let text  = d3.selectAll('g.slice')
                 data.outerRadius = radius;
                 return `translate(${arc.centroid(data)})`
             })
+
+
+
+
+/* ***** Force Node Visualization ***** */
+let nodes = [
+        { name: "Bacon"},
+        { name: "Person 1", target:[0] },
+        { name: "Person 2", target:[1] },
+        { name: "Person 3", target:[2] },
+        { name: "Person 4", target:[0, 1, 2, 3] },
+        { name: "Person 5", target:[3] }
+]
+
+let links = [];
+
+for (var i = 0; i<nodes.length; i++){
+    if (nodes[i].target !==undefined){
+        for (var x = 0; x<nodes[i].target.length; x++){
+            links.push(
+                {
+                source: node[i],
+                target: nodes[i].target[x]
+                }
+            )
+        }
+    }
+}
+
+
+let nodeChart = d3.select('#nodeChart')
+            .append('svg')
+            .attr('width' , width)
+            .attr('height', height)
+
+let force = d3.layout.force()
+        .nodes(nodes)
+        .links([])
+        .charge(-1000)
+        .size(width, height)
+
+let link = nodeChart.selectAll('line')
+        .data(links).enter().append('line')
+        .attr('stroke', 'white')
+
+let node = nodeChart.selectAll('circle')
+        .data(nodes).enter()
+        .append('g')
+        .call(force.drag);
+
+node.append('circle')
+    .attr('cx', (d)=>{
+        return d.x;
+    })
+    .attr('cy', (d)=>{
+        return d.y;
+    })
+    .attr('r', nodeWidth )
+    
+force.on('tick', (event)=>{
+    node.attr('transform', (data, index)=>{
+        return `translate(${d.x}, ${d.y})` ; 
+    })
+})
+
+force.start()
