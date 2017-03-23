@@ -22,7 +22,7 @@ let createDataPoints = (amount, max)=>{
     return barData;
 };
 
-createDataPoints(Math.floor(Math.random()*100),82);
+createDataPoints(Math.floor(Math.random()*100+5),82);
 // Remove
 console.log(barData)
 
@@ -147,11 +147,24 @@ let pieChart = d3.select('#pieChart').append('svg')
             .append('g')
                 .attr('transform', `translate(${width - radius}, ${height - radius})`)
                 .selectAll('path').data(pie(pieChartData))
-                .enter().append('path')
-                    .attr('fill', function(data, index){
-                        return pieColors(index);
-                    })
-                    .attr('d', arc)
+                .enter().append('g')
+                    .attr('class' , 'slice')
 
+let slices = d3.selectAll('g.slice')
+            .append('path')
+            .attr('fill', (data, index)=>{
+                    return pieColors(index)
+                })
+            .attr('d', arc)
 
-
+let text  = d3.selectAll('g.slice')
+            .append('text')
+            .text(function(data,index){
+                    return data.data.label
+                 })
+            .attr('text-anchor', 'middle')
+            .attr('transform', (data)=>{
+                data.innerRadius = 0;
+                data.outerRadius = radius;
+                return `translate(${arc.centroid(data)})`
+            })
