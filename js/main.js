@@ -1,6 +1,10 @@
+/* ******   Data Value and Data Creation functions ***** */
+
+
+// Create Array for bar chart data
 let barData = Array;
 
-
+// Define function to create randomized amount of data
 let createDataPoints = (amount, max)=>{
 
     // Determine whether datapoint is greater then max and 
@@ -16,14 +20,34 @@ let createDataPoints = (amount, max)=>{
 
 
     return barData;
-}
+};
 
 createDataPoints(Math.floor(Math.random()*100),82);
+// Remove
 console.log(barData)
+
+// Pie chart datapoints
+
+let pieChartData = [
+    {
+        label: "Bell",
+        value: 33
+    },
+    {
+        label: "Biv",
+        value: 33
+    },
+    {
+        label: "Devoe",
+        value: 33
+    },
+]
+// That girl is ...... ok now back to work!!!! 
+
 
 // Data display specifications
 let height = 400,
-    width = 600,
+    width = 400,
     barWidth = 50,
     barOffset = 5;
     radius = 200;
@@ -43,6 +67,10 @@ let colors = d3.scale.linear()
                 .domain( [ 0 , d3.max(barData)*.25, d3.max(barData)*.50, d3.max(barData)*.75, d3.max(barData) ])
                 .range(['#FFCB03', '#B222B2', '#2222B2', '#22B2B2', '#22B222'])
 
+
+// Colors for pie chart
+let pieColors = d3.scale.category10();
+
 // Adding tooltips
 let tooltip = d3.select('body').append('div')
         .style('position', 'absolute')
@@ -50,7 +78,7 @@ let tooltip = d3.select('body').append('div')
         .style('background', 'white')
         .style('opacity', 0)
 
-
+ /* ***** Visualization ***** */
 
 let barChart = d3.select('#chart').append('svg')
     .attr('width', width)
@@ -103,27 +131,27 @@ barChart.transition()
     .ease('elastic')
 
 
+/* ****** Pie Chart ***** */
 
+let pie = d3.layout.pie()
+            .value((data)=>{
+                return data.value;
+            })
 
-// Pie Chart
+let arc = d3.svg.arc()
+            .outerRadius(radius)
 
-let pieChartData = [
-    {
-        label: "Bell",
-        value: 33
-    },
-    {
-        label: "Biv",
-        value: 33
-    },
-    {
-        label: "Devoe",
-        value: 33
-    },
-]
-
-
-
+let pieChart = d3.select('#pieChart').append('svg')
+            .attr('width', width)
+            .attr('height', height)
+            .append('g')
+                .attr('transform', `translate(${width - radius}, ${height - radius})`)
+                .selectAll('path').data(pie(pieChartData))
+                .enter().append('path')
+                    .attr('fill', function(data, index){
+                        return pieColors(index);
+                    })
+                    .attr('d', arc)
 
 
 

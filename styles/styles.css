@@ -91,8 +91,8 @@ p {
   margin: 0 auto;
   margin-top: 10px; }
 
-#chart {
+#chart, #pieChart {
   display: flex; }
-
-rect {
-  box-shadow: inset 0px -10px 40px 10px black; }
+  #chart svg, #pieChart svg {
+    width: 100%;
+    justify-content: center; }
