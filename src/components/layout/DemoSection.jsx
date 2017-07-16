@@ -1,5 +1,5 @@
 import React from 'react'
-import { Grid, Segment, Tab  } from 'semantic-ui-react'
+import { Grid, Segment, Tab, Label, Header  } from 'semantic-ui-react'
 
 
 
@@ -17,11 +17,15 @@ const DemoSection = function (props) {
 
 
         <Segment  piled>
-            <Grid column={6} centered>
+           <Header as='h3' content={props.chartname} />
+           <Grid column={6} centered>
                 <Grid.Row>
                     {props.chart}
                 </Grid.Row>
             </Grid>
+            <Label size='small'>
+                Source of data used: '{props.source}'
+            </Label>
         </Segment>
 
     )

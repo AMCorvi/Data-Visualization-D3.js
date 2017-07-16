@@ -1,15 +1,11 @@
 import React from 'react'
 import Section from '../../layout/DemoSection.jsx'
 import BarStack from './BarStack.jsx'
-import RMD from 'react-markdown'
-import marked from 'marked'
-import chartMD from './BarStack.md'
 
-const codemarked  = marked('```js\n' + chartMD  + '\n```')
 
 const PerCapita = function () {
 
-    return <Section chartname='Top Countries GDP per capita of employed' code={ <RMD source={ codemarked }/> } chart={ <BarStack/> } />
+    return <Section chartname='Top Countries GDP Per Capita Employed' source="https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(PPP)_per_person_employed" chart={ <BarStack/> } />
 
 }
 

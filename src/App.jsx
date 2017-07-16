@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import 'semantic-ui-css/semantic.min.css'
 import { Tab } from 'semantic-ui-react'
 
-import UsGdp from './components/sections/PieChart/USGdp.jsx'
+import USgdp from './components/sections/PieChart/USGdp.jsx'
 import PerCapita from './components/sections/BarStack/PerCapita.jsx'
 
 
@@ -14,7 +14,7 @@ const styl = {
 
 
 const panes = [
-    { menuItem: 'Per Capita GDP Comparisons', render: () => <Tab.Pane> <PerCapita /> <UsGdp /> </Tab.Pane> },
+    { menuItem: 'Per Capita GDP Comparisons', render: () => <Tab.Pane> <PerCapita /> <USgdp /> </Tab.Pane> },
 	{ menuItem: 'Tab 2', render: () => <Tab.Pane>Tab 2 Content</Tab.Pane> },
 	{ menuItem: 'Tab 3', render: () => <Tab.Pane>Tab 3 Content</Tab.Pane> },
 ]
@@ -22,7 +22,8 @@ const panes = [
 class App extends Component {
 	render() {
 		return (
-			<Tab panes={panes} menu={{ attached: true, tabular: false, secondary: true, pointing: true, color: 'purple' }}  />
+            <Tab panes={panes} menu={{ attached: true, tabular: false, 
+                secondary: true, pointing: true, color: 'purple' }}  />
 
 		)
 	}
