@@ -1,12 +1,12 @@
 import React from 'react'
-import { BarStackChart } from 'react-d3-basic'
+import { BarStackTooltip } from 'react-d3-tooltip'
 import * as d3 from 'd3'
 
 import topPerCap from '../../../data/Top.json'
 
 
 
- const  width = 1200,
+ const  width = 1000,
  
         height = 600,
         chartSeries = [
@@ -27,12 +27,15 @@ import topPerCap from '../../../data/Top.json'
         const BarStack = function () {
 
             return (
-                        <BarStackChart data={topPerCap} width={width} height={height}
+                        <BarStackTooltip data={topPerCap} title='Top Countries GDP per capita of employed' width={width} height={height}
                                        chartSeries={chartSeries} x={country}
-                                       xScale={xScale} yTickFormat={yTickFormat} />
+                                       xScale={xScale} yTickFormat={yTickFormat} color={false} />
             )
 
         } 
+
+
+
 
 export default BarStack
 

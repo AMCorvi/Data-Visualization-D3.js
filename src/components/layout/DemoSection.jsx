@@ -5,11 +5,7 @@ import { Grid, Segment, Tab  } from 'semantic-ui-react'
 
    
 
-
-
-
-
-	const DemoSection = function (props) {
+const DemoSection = function (props) {
 
     const panes = [
         { menuItem: `${props.chartname} `, render: () => <Tab.Pane> {props.chart} </Tab.Pane> },
@@ -17,19 +13,19 @@ import { Grid, Segment, Tab  } from 'semantic-ui-react'
     ]
 
 
-		return (
+    return (
 
 
-			<Segment  piled>
-				<Grid column={6} centered>
-					<Grid.Row>
-                        <Tab panes={panes} />
-					</Grid.Row>
-				</Grid>
-			</Segment>
+        <Segment  piled>
+            <Grid column={6} centered>
+                <Grid.Row>
+                    {props.chart}
+                </Grid.Row>
+            </Grid>
+        </Segment>
 
-		)
-	}
+    )
+}
 
 
 export default DemoSection
