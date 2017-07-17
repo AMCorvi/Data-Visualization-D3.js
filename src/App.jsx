@@ -14,16 +14,15 @@ const styl = {
 
 
 const panes = [
-    { menuItem: 'Per Capita GDP Comparisons', render: () => <Tab.Pane> <PerCapita /> <USgdp /> </Tab.Pane> },
-	{ menuItem: 'Tab 2', render: () => <Tab.Pane>Tab 2 Content</Tab.Pane> },
-	{ menuItem: 'Tab 3', render: () => <Tab.Pane>Tab 3 Content</Tab.Pane> },
+    { menuItem: 'React-D3', render: () => <Tab.Pane> <PerCapita /> <USgdp /> </Tab.Pane> },
+	{ menuItem: 'Classic D3', render: () => <Tab.Pane>Tab 2 Content</Tab.Pane> },
 ]
 
 class App extends Component {
 	render() {
 		return (
             <Tab panes={panes} menu={{ attached: true, tabular: false, 
-                secondary: true, pointing: true, color: 'purple' }}  />
+                secondary: true, pointing: true, color: 'red' }}  />
 
 		)
 	}

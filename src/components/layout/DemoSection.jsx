@@ -23,8 +23,8 @@ const DemoSection = function (props) {
                     {props.chart}
                 </Grid.Row>
             </Grid>
-            <Label size='small'>
-                Source of data used: '{props.source}'
+            <Label size='small' color='red' ribbon>
+                Source of data used: '<a href={props.source}> {props.source} </a>'
             </Label>
         </Segment>
 
