@@ -2,7 +2,11 @@ import React from 'react'
 import { PieTooltip } from 'react-d3-tooltip'
 import employmentBySector from '../../../data/EmployedbySector.json'
 
-
+const styl = {
+    chart: {
+        width: "100%" 
+    }
+}
 const width = 800,
     height = 600,
     name = function (data) {
@@ -129,6 +133,8 @@ const PieChartEmployment = () => {
       value = {value}
       name = {name}
 
+
+      style={styl.chart}
     />
 
 }

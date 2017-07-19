@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import 'semantic-ui-css/semantic.min.css'
 import { Tab } from 'semantic-ui-react'
 
-import USgdp from './components/sections/PieChart/USGdp.jsx'
-import PerCapita from './components/sections/BarStack/PerCapita.jsx'
+import USGDPSection from './components/sections/PieChart/USGdpSection.jsx'
+import PerCapitaSection from './components/sections/BarStack/PerCapitaSection.jsx'
 
 
 const styl = {
@@ -14,7 +14,7 @@ const styl = {
 
 
 const panes = [
-    { menuItem: 'React-D3', render: () => <Tab.Pane> <PerCapita /> <USgdp /> </Tab.Pane> },
+    { menuItem: 'React-D3', render: () => <Tab.Pane> <PerCapitaSection /> <USGDPSection /> </Tab.Pane> },
 	{ menuItem: 'Classic D3', render: () => <Tab.Pane>Tab 2 Content</Tab.Pane> },
 ]
 
