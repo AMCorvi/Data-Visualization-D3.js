@@ -6,7 +6,7 @@ import topPerCap from '../../../data/Top.json'
 
 
 
- const  width = 600,
+ const  width = 900,
  
         height = 600,
         chartSeries = [

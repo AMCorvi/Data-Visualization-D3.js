@@ -4,6 +4,7 @@ import { Tab } from 'semantic-ui-react'
 
 import USGDPSection from './components/sections/PieChart/USGdpSection.jsx'
 import PerCapitaSection from './components/sections/BarStack/PerCapitaSection.jsx'
+import CorvusLineage from './components/sections/TreeChart/LineageOfCorvusSpecies.jsx'
 
 
 const styl = {
@@ -15,7 +16,7 @@ const styl = {
 
 const panes = [
     { menuItem: 'React-D3', render: () => <Tab.Pane> <PerCapitaSection /> <USGDPSection /> </Tab.Pane> },
-	{ menuItem: 'Classic D3', render: () => <Tab.Pane>Tab 2 Content</Tab.Pane> },
+    { menuItem: 'Classic D3', render: () => <Tab.Pane> <CorvusLineage/> </Tab.Pane>  },
 ]
 
 class App extends Component {
@@ -23,7 +24,6 @@ class App extends Component {
 		return (
             <Tab panes={panes} menu={{ attached: true, tabular: false, 
                 secondary: true, pointing: true, color: 'red' }}  />
-
 		)
 	}
 }
