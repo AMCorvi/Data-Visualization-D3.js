@@ -100,7 +100,7 @@ export default class TreeChart extends React.Component {
 
       render() {
         return (
-          <svg className="tree-chart-basic" ref={(r) => this.chartRef = r}></svg>
+          <svg style={{ width: '90%', margin: 'auto', overflow: 'scroll' }} className="tree-chart-basic" ref={(r) => this.chartRef = r}></svg>
         );
       }
 
